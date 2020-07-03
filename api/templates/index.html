@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store</title>
+</head>
+
+<body>
+    <h1>Welcome to my Shoe Store!</h1>
+            {% for item in data %}
+            <tr>
+                <td>{{item.brand}}</td>
+                <td>{{item.size}}</td>
+                <td>{{item.material}}</td>
+                <td><a href="/api/manufacturer/{{item.manufacturer.id}}/"> {{item.manufacturer}}</a></td>
+                <td><a href="/api/shoe_color/{{item.color.id}}/"> {{item.color}}</a></td>
+                <td><a href="/api/shoe_type/{{item.shoe_type.id}}/"> {{item.shoe_type}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
